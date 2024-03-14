@@ -2,6 +2,7 @@ package com.chatapp.realtimechatapp.controller;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
+// import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,10 @@ import com.chatapp.realtimechatapp.models.Message;
 public class MessageController {
 
     @MessageMapping("/messsage") // to send the message
+    // @GetMapping("/vikas")
+    // public String msg(){
+    //     return "This is vikas kumar";
+    // }
     @SendTo("/topic/return-to") // to receive the message
     public Message getContent(@RequestBody Message message){
 
